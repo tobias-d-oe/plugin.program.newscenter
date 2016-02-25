@@ -1,0 +1,238 @@
+# XBMC Media Center language file
+# Addon Name: NewsCenter
+# Addon id: plugin.program.newscenter
+# Addon version: 0.0.2
+# Addon Provider: Tdoe
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xbmc-addons/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "Addon Summary"
+msgid "NewsCenter Plugin for Germany"
+msgstr "NewsCenter Plugin for Germany"
+
+msgctxt "Addon Description"
+msgid "Plugin is for Skinners to integrate a newscenter. Which contains a widget with rss news and multiple direct URLs provided as Property to watch directly Tagesschau, Tagesschau in 100s, Wettervorhersagevideo, Wetter in 60s. Auch die aktuelle Tabelle der 1. und 2. Bundesliga kann angezeigt werden."
+msgidr "Plugin is for Skinners to integrate a newscenter. Which contains a widget with rss news and multiple direct URLs provided as Property to watch directly Tagesschau, Tagesschau in 100s, Wettervorhersagevideo, Wetter in 60s. Auch die aktuelle Tabelle der 1. und 2. Bundesliga kann angezeigt werden."
+
+msgctxt "#30010"
+msgid "NewsCenter"
+msgstr "NewsCenter"
+
+msgctxt "#30011"
+msgid "NewsCenter Widget Rubrik"
+msgstr "NewsCenter Widget Rubrik"
+
+msgctxt "#30106"
+msgid "Dienst gestartet"
+msgstr "Dienst gestartet"
+
+msgctxt "#30108"
+msgid "Aktualisiere NewsCenter Daten"
+msgstr "Aktualisiere NewsCenter Daten"
+
+msgctxt "#30110"
+msgid "Allgemein"
+msgstr "Allgemein"
+
+msgctxt "#30114"
+msgid "Info bei Systemstart und Refresh"
+msgstr "Info bei Systemstart und Refresh"
+
+msgctxt "#30121"
+msgid "Der Tagesschau-Nachrichtenüberblick in 100 Sekunden als Video-Podcast"
+msgstr "Der Tagesschau-Nachrichtenüberblick in 100 Sekunden als Video-Podcast"
+
+msgctxt "#30122"
+msgid "Die Nachrichtensendung im Ersten"
+msgstr "Die Nachrichtensendung im Ersten"
+
+msgctxt "#30123"
+msgid "Tagesschau"
+msgstr "Tagesschau"
+
+msgctxt "#30124"
+msgid "Die Videos von wetter.info erklären das Wettergeschehen"
+msgstr "Die Videos von wetter.info erklären das Wettergeschehen"
+
+msgctxt "#30125"
+msgid "1.Bundesliga Spielplan"
+msgstr "1.Bundesliga Spielplan"
+
+msgctxt "#30126"
+msgid "2.Bundesliga Spielplan"
+msgstr "2.Bundesliga Spielplan"
+
+msgctxt "#30127"
+msgid "Aktualisierungsinterval Content"
+msgstr "Aktualisierungsinterval Content"
+
+msgctxt "#30128"
+msgid "1.Bundesliga Tabelle"
+msgstr "1.Bundesliga Tabelle"
+
+msgctxt "#30129"
+msgid "2.Bundesliga Tabelle"
+msgstr "2.Bundesliga Tabelle"
+
+msgctxt "#30130"
+msgid "In komprimierter Fassung von anderthalb Minuten informieren wir Sie über die aktuellen Nachrichten des Tages."
+msgstr "In komprimierter Fassung von anderthalb Minuten informieren wir Sie über die aktuellen Nachrichten des Tages."
+
+msgctxt "#30131"
+msgid "Tagesschau in 100s"
+msgstr "Tagesschau in 100s"
+
+msgctxt "#30132"
+msgid "Du willst wissen, was in der Welt los ist? Dann: Hallo bei logo! - deinen Kindernachrichten bei KiKA."
+msgstr "Du willst wissen, was in der Welt los ist? Dann: Hallo bei logo! - deinen Kindernachrichten bei KiKA."
+
+msgctxt "#30133"
+msgid "Aktuelles Wetter von tagesschau.de"
+msgstr "Aktuelles Wetter von tagesschau.de"
+
+msgctxt "#30134"
+msgid "Wetter in 60 Sekunden von Wetteronline"
+msgstr "Wetter in 60 Sekunden von Wetteronline"
+
+msgctxt "#30135"
+msgid "In komprimierter Fassung von 100 Sekunden informieren wir Sie über die aktuellen Nachrichten des Tages."
+msgstr "In komprimierter Fassung von 100 Sekunden informieren wir Sie über die aktuellen Nachrichten des Tages."
+
+msgctxt "#30136"
+msgid "MDR Aktuell"
+msgstr "MDR Aktuell"
+
+msgctxt "#30137"
+msgid "Tagesschau"
+msgstr "Tagesschau"
+
+msgctxt "#30138"
+msgid "Tivi Kindernachrichten"
+msgstr "Tivi Kindernachrichten"
+
+msgctxt "#30139"
+msgid "Wetter in 60s"
+msgstr "Wetter in 60s"
+
+msgctxt "#30140"
+msgid "Tagesschau.de - Wetter"
+msgstr "Tagesschau.de - Wetter"
+
+msgctxt "#30141"
+msgid "wetter.info - Wetter"
+msgstr "wetter.info - Wetter"
+
+msgctxt "#30142"
+msgid "Platz"
+msgstr "Platz"
+
+msgctxt "#30143"
+msgid "Verein"
+msgstr "Verein"
+
+msgctxt "#30144"
+msgid "Spiele"
+msgstr "Spiele"
+
+msgctxt "#30145"
+msgid "G  U  V"
+msgstr "G  U  V"
+
+msgctxt "#30146"
+msgid "Tore"
+msgstr "Tore"
+
+msgctxt "#30147"
+msgid "Punkte"
+msgstr "Punkte"
+
+msgctxt "#30148"
+msgid "Statistik"
+msgstr "Statistik"
+
+msgctxt "#30149"
+msgid "Bitte PLZ in den Einstellungen festlegen"
+msgstr "Bitte PLZ in den Einstellungen festlegen"
+
+msgctxt "#30150"
+msgid "Update Latest News Feed - Dieser Vorgang kann etwas dauern... bitte Geduld."
+msgstr "Update Latest News Feed - Dieser Vorgang kann etwas dauern... bitte Geduld."
+
+msgctxt "#30151"
+msgid "Unwetterkarte von"
+msgstr "Unwetterkarte von"
+
+msgctxt "#30152"
+msgid "Unwetterkarte von Deutschland"
+msgstr "Unwetterkarte von Deutschland"
+
+msgctxt "#30153"
+msgid "Sport Auswahl"
+msgstr "Sport Auswahl"
+
+msgctxt "#30154"
+msgid "News Auswahl"
+msgstr "News Auswahl"
+
+msgctxt "#30155"
+msgid "Default News Auswahl"
+msgstr "Default News Auswahl"
+
+msgctxt "#30156"
+msgid "Wettervorhersage Heute"
+msgstr "Wettervorhersage Heute"
+
+msgctxt "#30157"
+msgid "Wettervorhersage Heute Nacht"
+msgstr "Wettervorhersage Heute Nacht"
+
+msgctxt "#30158"
+msgid "Wettervorhersage Morgen"
+msgstr "Wettervorhersage Morgen"
+
+msgctxt "#30159"
+msgid "Wind Heute"
+msgstr "Wind Heute"
+
+msgctxt "#30160"
+msgid "Wind Heute Nacht"
+msgstr "Wind Heute Nacht"
+
+msgctxt "#30161"
+msgid "Wind Morgen"
+msgstr "Wind Morgen"
+
+msgctxt "#30162"
+msgid "Temperaturen Heute"
+msgstr "Temperaturen Heute"
+
+msgctxt "#30163"
+msgid "Temperaturen Heute Nacht"
+msgstr "Temperaturen Heute Nacht"
+
+msgctxt "#30164"
+msgid "Temperaturen Morgen"
+msgstr "Temperaturen Morgen"
+
+msgctxt "#30165"
+msgid "Regen Heute"
+msgstr "Regen Heute"
+
+msgctxt "#30166"
+msgid "Regen Heute Nacht"
+msgstr "Regen Heute Nacht"
+
+msgctxt "#30167"
+msgid "Regen Morgen"
+msgstr "Regen Morgen"
