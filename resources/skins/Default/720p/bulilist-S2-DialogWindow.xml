@@ -1,0 +1,1085 @@
+
+<!-- plugin.program.newscenter - Bulilist - START -->
+<!-- Confluence Skin adapted -->
+<window>
+        <defaultcontrol always="true">10</defaultcontrol>
+        <include>dialogeffect</include>
+        <controls>
+                <control type="group" id="576757">
+                        <left>235</left>
+                        <top>10</top>
+                        <width>810</width>
+                        <height>700</height>
+
+                        <control type="image">
+                                <description>background image</description>
+                                <left>0</left>
+                                <top>0</top>
+                                <width>810</width>
+                                <height>700</height>
+                                <texture border="40">ConfluenceDialogBack2.png</texture>
+                        </control>
+                        <control type="image">
+                                <description>Dialog Header image</description>
+                                <left>40</left>
+                                <top>16</top>
+                                <width>730</width>
+                                <height>40</height>
+                                <texture>ConfluenceDialogHeader.png</texture>
+                        </control>
+                        <control type="label" id="1">
+                                <description>header label</description>
+                                <left>40</left>
+                                <top>20</top>
+                                <width>730</width>
+                                <height>30</height>
+                                <font>font13_title</font>
+                                <label>Bundesliga Tabelle</label>  
+                       <!--         <label>$ADDON[plugin.program.tvhighlights  30100]</label>  -->
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <textcolor>selected</textcolor>
+                                <shadowcolor>black</shadowcolor>
+                        </control>
+
+                        <control type="label">
+                                <left>20</left>
+                                <top>60</top>
+                                <width>770</width>
+                                <height>36</height>
+                                <font>font24_title</font>
+                                <label>Tabelle der $INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]. Bundesliga</label>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                        </control>
+
+
+
+
+
+                        <control type="button" id="855655">
+                                <description>Close Window button</description>
+                                <left>720</left>
+                                <top>15</top>
+                                <width>64</width>
+                                <height>32</height>
+                                <label>-</label>
+                                <font>-</font>
+                                <onclick>PreviousMenu</onclick>
+                                <texturefocus>DialogCloseButton-focus.png</texturefocus>
+                                <texturenofocus>DialogCloseButton.png</texturenofocus>
+                                <onleft>10</onleft>
+                                <onright>10</onright>
+                                <onup>10</onup>
+                                <ondown>10</ondown>
+                                <visible>system.getbool(input.enablemouse)</visible>
+                        </control>
+
+
+
+<!--  A N F A N G - NR 11 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>120</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.11.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>135</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>135</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>135</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>135</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>135</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>135</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.11.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>135</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.11.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 11 -->
+
+
+
+<!--  A N F A N G - NR 12 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>170</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.12.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>185</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>185</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>185</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>185</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>185</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>185</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.12.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>185</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.12.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 12 -->
+
+
+
+<!--  A N F A N G - NR 13 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>220</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.13.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>235</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>235</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>235</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>235</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>235</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>235</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.13.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>235</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.13.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 13 -->
+
+
+
+<!--  A N F A N G - NR 14 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>270</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.14.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>285</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>285</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>285</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>285</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>285</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>285</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.14.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>285</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.14.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 14 -->
+
+
+
+<!--  A N F A N G - NR 15 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>320</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.15.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>335</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>335</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>335</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>335</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>335</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>335</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.15.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>335</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.15.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 15 -->
+
+
+
+<!--  A N F A N G - NR 16 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>370</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.16.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>385</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>385</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>385</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>385</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>385</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>385</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.16.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>385</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.16.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 16 -->
+
+
+
+<!--  A N F A N G - NR 17 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>420</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.17.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>435</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>435</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>435</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>435</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>435</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>435</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.17.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>435</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.17.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 17 -->
+
+
+
+<!--  A N F A N G - NR 18 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>470</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.18.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>485</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>485</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>485</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>485</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>485</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>485</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.18.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>485</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.18.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 18 -->
+
+
+
+<!--  A N F A N G - NR 19 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>520</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.19.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>535</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>535</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>535</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>535</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>535</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>535</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.19.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>535</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.19.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 19 -->
+
+
+
+<!--  A N F A N G - NR 20 -->
+                        <control type="image">
+                                  <left>30</left>
+                                  <top>570</top>
+                                  <width>40</width>
+                                  <height>40</height>
+                                  <texture border="0">$INFO[Window(Home).Property(NewsCenter.Buli.20.Logo)]</texture>
+                        </control>
+
+                        <control type="label">
+                                  <left>100</left>
+                                  <top>585</top>
+                                  <width>50</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.Platz)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>160</left>
+                                  <top>585</top>
+                                  <width>310</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.Name)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>380</left>
+                                  <top>585</top>
+                                  <width>80</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.Spiele)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>450</left>
+                                  <top>585</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.SUN)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="label">
+                                  <left>530</left>
+                                  <top>585</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.Tore)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+                        <control type="label">
+                                  <left>640</left>
+                                  <top>585</top>
+                                  <width>100</width>
+                                  <height>10</height>
+                                  <font>font12</font>
+                                  <label>$INFO[Window(Home).Property(NewsCenter.Buli.20.Punkte)]</label>
+                                  <align>left</align>
+                                  <aligny>center</aligny>
+                                  <scroll>true</scroll>
+                                  <scrollspeed>50</scrollspeed>
+                        </control>
+
+                        <control type="image">
+                                  <left>720</left>
+                                  <top>585</top>
+                                  <width>41</width>
+                                  <height>11</height>
+                                  <texture border="10">$INFO[Window(Home).Property(NewsCenter.Buli.20.StatPic)]</texture>
+                        </control>
+
+<!--  E N D E - NR 20 -->
+
+                        <control type="button" id="10">
+                                <description>Yes button</description>
+                                <left>305</left>
+                                <top>635</top>
+                                <width>200</width>
+                                <height>40</height>
+                                <label>Schließen</label>
+                                <font>font12_title</font>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>white</focusedcolor>
+                                <align>center</align>
+                                <onleft>10</onleft>
+                                <onright>10</onright>
+                                <onup>855655</onup>
+                                <ondown>855655</ondown>
+                                <onclick>PreviousMenu</onclick>
+                        </control>
+
+
+
+
+
+                </control>
+
+        </controls>
+
+</window>
+
