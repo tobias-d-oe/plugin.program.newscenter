@@ -33,7 +33,7 @@
                                 <width>730</width>
                                 <height>30</height>
                                 <font>font13_title</font>
-                                <label>Bundesliga Aktueller Spieltag</label>  
+                                <label>Bundesliga Tabelle</label>  
                        <!--         <label>$ADDON[plugin.program.tvhighlights  30100]</label>  -->
                                 <align>center</align>
                                 <aligny>center</aligny>
@@ -47,7 +47,7 @@
                                 <width>770</width>
                                 <height>36</height>
                                 <font>font24_title</font>
-                                <label>Ergebnisse der $INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]. Bundesliga</label>
+                                <label>Tabelle der $INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]. Bundesliga</label>
                                 <align>center</align>
                                 <aligny>center</aligny>
                         </control>
@@ -89,7 +89,7 @@
                                 <orientation>Vertikal</orientation>
                                 <itemlayout height="60" width="800">
                                     <control type="image">
-                                              <left>380</left>
+                                              <left>5</left>
                                               <top>0</top>
                                               <width>40</width>
                                               <height>40</height>
@@ -97,7 +97,7 @@
                                     </control>
             
                                     <control type="label">
-                                              <left>10</left>
+                                              <left>70</left>
                                               <top>15</top>
                                               <width>180</width>
                                               <height>10</height>
@@ -110,35 +110,22 @@
                                     </control>
             
                                     <control type="label">
-                                              <left>200</left>
+                                              <left>100</left>
                                               <top>15</top>
-                                              <width>170</width>
+                                              <width>220</width>
                                               <height>10</height>
                                               <font>font12</font>
-                                              <label>$INFO[ListItem.Property(Punkte)]</label>
-                                              <align>right</align>
-                                              <aligny>center</aligny>
-                                              <scroll>true</scroll>
-                                              <scrollspeed>50</scrollspeed>
-                                    </control>
-            
-                                    <control type="label">
-                                              <left>530</left>
-                                              <top>15</top>
-                                              <width>360</width>
-                                              <height>10</height>
-                                              <font>font12</font>
-                                              <label>$INFO[ListItem.Property(Tore)]</label>
+                                              <label>$INFO[ListItem.Label]</label>
                                               <align>left</align>
                                               <aligny>center</aligny>
                                               <scroll>true</scroll>
                                               <scrollspeed>50</scrollspeed>
                                     </control>
-            
+           
                                     <control type="label">
-                                              <left>440</left>
+                                              <left>360</left>
                                               <top>15</top>
-                                              <width>100</width>
+                                              <width>60</width>
                                               <height>10</height>
                                               <font>font12</font>
                                               <label>$INFO[ListItem.Property(Spiele)]</label>
@@ -147,21 +134,60 @@
                                               <scroll>true</scroll>
                                               <scrollspeed>50</scrollspeed>
                                     </control>
-          
+ 
+ 
+                                    <control type="label">
+                                              <left>420</left>
+                                              <top>15</top>
+                                              <width>360</width>
+                                              <height>10</height>
+                                              <font>font12</font>
+                                              <label>$INFO[ListItem.Property(SUN)]</label>
+                                              <align>left</align>
+                                              <aligny>center</aligny>
+                                              <scroll>true</scroll>
+                                              <scrollspeed>50</scrollspeed>
+                                    </control>
+            
+                                    <control type="label">
+                                              <left>520</left>
+                                              <top>15</top>
+                                              <width>100</width>
+                                              <height>10</height>
+                                              <font>font12</font>
+                                              <label>$INFO[ListItem.Property(Tore)]</label>
+                                              <align>left</align>
+                                              <aligny>center</aligny>
+                                              <scroll>true</scroll>
+                                              <scrollspeed>50</scrollspeed>
+                                    </control>
+                      
+                                    <control type="label">
+                                              <left>650</left>
+                                              <top>15</top>
+                                              <width>100</width>
+                                              <height>10</height>
+                                              <font>font12</font>
+                                              <label>$INFO[ListItem.Property(Punkte)]</label>
+                                              <align>left</align>
+                                              <aligny>center</aligny>
+                                              <scroll>true</scroll>
+                                              <scrollspeed>50</scrollspeed>
+                                    </control>
+ 
                                     <control type="image">
-                                              <left>480</left>
-                                              <top>0</top>
-                                              <width>40</width>
-                                              <height>40</height>
+                                              <left>700</left>
+                                              <top>15</top>
+                                              <width>41</width>
+                                              <height>11</height>
                                               <texture border="0">$INFO[ListItem.Property(StatPic)]</texture>
                                     </control>
 
 
                                 </itemlayout>
                                 <focusedlayout height="60" width="800">
-
                                     <control type="image">
-                                              <left>380</left>
+                                              <left>5</left>
                                               <top>0</top>
                                               <width>40</width>
                                               <height>40</height>
@@ -169,41 +195,56 @@
                                     </control>
             
                                     <control type="label">
-                                              <left>10</left>
+                                              <left>70</left>
                                               <top>15</top>
                                               <width>180</width>
                                               <height>10</height>
                                               <font>font12</font>
-                                              <textcolor>selected</textcolor>
                                               <label>$INFO[ListItem.Property(Platz)]</label>
+                                              <align>left</align>
+                                              <aligny>center</aligny>
+                                              <textcolor>blue</textcolor>
+                                              <scroll>true</scroll>
+                                              <scrollspeed>50</scrollspeed>
+                                    </control>
+            
+                                    <control type="label">
+                                              <left>100</left>
+                                              <top>15</top>
+                                              <width>220</width>
+                                              <height>10</height>
+                                              <font>font12_title</font>
+                                              <label>$INFO[ListItem.Label]</label>
+                                              <textcolor>blue</textcolor>
                                               <align>left</align>
                                               <aligny>center</aligny>
                                               <scroll>true</scroll>
                                               <scrollspeed>50</scrollspeed>
                                     </control>
-            
+           
                                     <control type="label">
-                                              <left>200</left>
+                                              <left>360</left>
                                               <top>15</top>
-                                              <width>170</width>
+                                              <width>60</width>
                                               <height>10</height>
                                               <font>font12</font>
-                                              <textcolor>selected</textcolor>
-                                              <label>$INFO[ListItem.Property(Punkte)]</label>
-                                              <align>right</align>
+                                              <textcolor>blue</textcolor>
+                                              <label>$INFO[ListItem.Property(Spiele)]</label>
+                                              <align>left</align>
                                               <aligny>center</aligny>
                                               <scroll>true</scroll>
                                               <scrollspeed>50</scrollspeed>
                                     </control>
-            
+ 
+ 
                                     <control type="label">
-                                              <left>530</left>
+                                              <left>420</left>
                                               <top>15</top>
                                               <width>360</width>
                                               <height>10</height>
                                               <font>font12</font>
-                                              <textcolor>selected</textcolor>
-                                              <label>$INFO[ListItem.Property(Tore)]</label>
+                                              <label>$INFO[ListItem.Property(SUN)]</label>
+                                              <textcolor>blue</textcolor>
                                               <align>left</align>
                                               <aligny>center</aligny>
                                               <scroll>true</scroll>
@@ -211,27 +252,45 @@
                                     </control>
             
                                     <control type="label">
-                                              <left>440</left>
+                                              <left>520</left>
                                               <top>15</top>
                                               <width>100</width>
                                               <height>10</height>
-                                              <font>font14</font>
-                                              <textcolor>selected</textcolor>
-                                              <label>$INFO[ListItem.Property(Spiele)]</label>
-                                              <textcolor>selected</textcolor>
+                                              <font>font12</font>
+                                              <label>$INFO[ListItem.Property(Tore)]</label>
+                                              <textcolor>blue</textcolor>
                                               <align>left</align>
                                               <aligny>center</aligny>
                                               <scroll>true</scroll>
                                               <scrollspeed>50</scrollspeed>
                                     </control>
-          
+                      
+                                    <control type="label">
+                                              <left>650</left>
+                                              <top>15</top>
+                                              <width>100</width>
+                                              <height>10</height>
+                                              <font>font12</font>
+                                              <label>$INFO[ListItem.Property(Punkte)]</label>
+                                              <textcolor>blue</textcolor>
+                                              <align>left</align>
+                                              <aligny>center</aligny>
+                                              <scroll>true</scroll>
+                                              <scrollspeed>50</scrollspeed>
+                                    </control>
+ 
                                     <control type="image">
-                                              <left>480</left>
-                                              <top>0</top>
-                                              <width>40</width>
-                                              <height>40</height>
+                                              <left>700</left>
+                                              <top>15</top>
+                                              <width>41</width>
+                                              <height>11</height>
                                               <texture border="0">$INFO[ListItem.Property(StatPic)]</texture>
                                     </control>
+
+
+
+
+
                                 </focusedlayout>
                                 <content>plugin://plugin.program.newscenter?methode=get_buli_table_items&buliliga=$INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]</content> 
             <!--  E N D E - NR 1 -->
