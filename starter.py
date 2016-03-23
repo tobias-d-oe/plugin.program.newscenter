@@ -28,81 +28,164 @@
 ###########################################################################
 
 import os,sys,xbmc,xbmcgui,xbmcaddon
+from resources.lib.NewsBuli import PluginHelpers
+
+__addon__     = xbmcaddon.Addon()
+__addonID__   = __addon__.getAddonInfo('id')
+__addonname__ = __addon__.getAddonInfo('name')
+__version__   = __addon__.getAddonInfo('version')
+__path__      = __addon__.getAddonInfo('path')
+__LS__        = __addon__.getLocalizedString
+__icon__      = xbmc.translatePath(os.path.join(__path__, 'icon.png'))
 
 
-mdelay = 0
-mdelay2 = 0
-icon = xbmc.translatePath("special://home/addons/plugin.program.newscenter/icon.png")
-addon       = xbmcaddon.Addon()
-enableinfo  = addon.getSetting('enableinfo')
-translation = addon.getLocalizedString
-notifyheader= str(translation(30010))
-notifytxt   = str(translation(30106))
-refreshcontent = int(addon.getSetting('mdelay')) * 60
-WINDOW = xbmcgui.Window( 10000 )
+WINDOW         = xbmcgui.Window( 10000 )
+ph             = PluginHelpers()
 
-xbmc.log("NewsCenter: Starting with Contentrefresh (%s)" % (addon.getSetting('mdelay')))
-
-if int(addon.getSetting('mdelay')) == 0:
-    xbmc.log("Do not start NewsCenter Service, content refresh is 0")
-    sys.exit()
-
-
-if enableinfo == 'true':
-    xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+notifytxt+' ,4000,'+icon+')')
-
-
-
-
+##############################################################################################################################
+##
+##
+##
+##############################################################################################################################
 class MyMonitor( xbmc.Monitor ):
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
     def __init__( self, *args, **kwargs ):
         xbmc.Monitor.__init__( self )
 
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
     def onSettingsChanged( self ):
-        settings_initialize()
+        self.settings_initialize()
+
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def get_settings(self):
+        ph = PluginHelpers()
+        ph.writeLog("Settings (re)loaded")
+        self.show_tagesschau         = __addon__.getSetting('show_tagesschau').strip()
+        self.show_tagesschau100      = __addon__.getSetting('show_tagesschau100').strip()
+        self.show_mdraktuell         = __addon__.getSetting('show_mdraktuell')
+        self.show_ndrkompakt         = __addon__.getSetting('show_ndrkompakt')
+        self.show_brrundschau100     = __addon__.getSetting('show_brrundschau100')
+        self.show_kindernews         = __addon__.getSetting('show_kindernews')
+        self.show_tagesschauwetter   = __addon__.getSetting('show_tagesschauwetter')
+        self.show_wetter60           = __addon__.getSetting('show_wetter60')
+        self.show_wetterinfo         = __addon__.getSetting('show_wetterinfo')
+        self.show_wetternet          = __addon__.getSetting('show_wetternet')
+        self.show_unwetter_warn_icon = __addon__.getSetting('show_unwetter_warn_icon')
+        self.skinnermode             = __addon__.getSetting('skinnermode')
+        self.enableinfo              = __addon__.getSetting('enableinfo')
+        self.refreshcontent          = int(__addon__.getSetting('mdelay')) * 60
+
+        ph.writeLog('Show notifications:            %s' % (self.enableinfo))
+        ph.writeLog('Refresh Intervall :            %s' % (self.refreshcontent))
+        ph.writeLog('Skinner Mode:                  %s' % (self.skinnermode))
+        ph.writeLog('Show Video Tagesschau:         %s' % (self.show_tagesschau), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Tagesschau100:      %s' % (self.show_tagesschau100), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video MDR Aktuell:        %s' % (self.show_mdraktuell), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video NDR Kompakt:        %s' % (self.show_ndrkompakt), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video BR Rundschau:       %s' % (self.show_brrundschau100), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Kindernews:         %s' % (self.show_kindernews), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Tagesschau Wetter:  %s' % (self.show_tagesschauwetter), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Wetter Online:      %s' % (self.show_wetter60), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Wetter Info:        %s' % (self.show_wetterinfo), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Video Wetter Net:         %s' % (self.show_wetternet), level=xbmc.LOGDEBUG)
+        ph.writeLog('Show Thunderstorm Warn Icon:   %s' % (self.show_unwetter_warn_icon), level=xbmc.LOGDEBUG)
+
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def set_visible_properties(self):
+        ph = PluginHelpers()
+        ph.writeLog("Make userselection visible", level=xbmc.LOGDEBUG)
+        WINDOW.setProperty("NewsCenter.Visible.Tagesschau",        self.show_tagesschau)
+        WINDOW.setProperty("NewsCenter.Visible.Tagesschau100",     self.show_tagesschau100)
+        WINDOW.setProperty("NewsCenter.Visible.MDRAktuell",        self.show_mdraktuell)
+        WINDOW.setProperty("NewsCenter.Visible.NDRKompakt",        self.show_ndrkompakt)
+        WINDOW.setProperty("NewsCenter.Visible.BRRundschau100",    self.show_brrundschau100)
+        WINDOW.setProperty("NewsCenter.Visible.KinderNachrichten", self.show_kindernews)
+        WINDOW.setProperty("NewsCenter.Visible.TagesschauWetter",  self.show_tagesschauwetter)
+        WINDOW.setProperty("NewsCenter.Visible.Wetter60",          self.show_wetter60)
+        WINDOW.setProperty("NewsCenter.Visible.WetterInfo",        self.show_wetterinfo)
+        WINDOW.setProperty("NewsCenter.Visible.WetterNet",         self.show_wetternet)
+        WINDOW.setProperty("NewsCenter.Visible.UnwetterWarnIcon",  self.show_unwetter_warn_icon)
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def settings_initialize(self):
+        ph = PluginHelpers()
+        ph.writeLog("Settings (re)loaded")
+        self.get_settings()
+        self.set_visible_properties()
+        xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
 
 
-def settings_initialize():
-    xbmc.log("NewsCenter: Settings changed")
-    xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter)')
 
 
-#if enableinfo == 'true':
-#    xbmc.executebuiltin('XBMC.Notification("NewsCenter" , "aktualisierung wird durchgefuehrt" ,4000,'+icon+')')
+##############################################################################################################################
+##
+##
+##
+##############################################################################################################################
+class Starter():
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def __init__(self):
+        self.enableinfo = False
+        self.refreshcontent = 0
 
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def stop(self):
+        ph = PluginHelpers()
+        ph.writeLog('Stopping %s' % (__addonname__))
 
-skinnermode = addon.getSetting('skinnermode')
-if skinnermode == 'True':    
-    shouldrun = WINDOW.getProperty( "LatestNews.Service" )
-    if shouldrun == "active":
-        if enableinfo == 'true':
-            xbmc.executebuiltin('XBMC.Notification("NewsCenter" , "aktualisierung wird durchgefuehrt" ,4000,'+icon+')')
-        xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter)')
-else:
-    if enableinfo == 'true':
-        xbmc.executebuiltin('XBMC.Notification("NewsCenter" , "aktualisierung wird durchgefuehrt" ,4000,'+icon+')')
-    xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter)')
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def start(self):
+        ph = PluginHelpers()
+        ph.writeLog('Starting %s V.%s' % (__addonname__, __version__))
 
+        monitor = MyMonitor()
+        monitor.settings_initialize()
+
+        ph.notifyOSD(__LS__(30010), __LS__(30106), __icon__, enabled=monitor.enableinfo)
+        
+        while not monitor.abortRequested():
+            if ( monitor.waitForAbort(monitor.refreshcontent) | monitor.refreshcontent == 0 ):
+                self.stop()
+                break
+            monitor.skinnermode = __addon__.getSetting('skinnermode')
+            if monitor.skinnermode == 'True':
+                shouldrun = WINDOW.getProperty( "LatestNews.Service" )
+                if shouldrun == "active":
+                    ph.notifyOSD(__LS__(30010), "Aktualisierung wird durchgefuehrt", __icon__, enabled=monitor.enableinfo)
+                    xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
+            else:
+                ph.notifyOSD(__LS__(30010), "Aktualisierung wird durchgefuehrt", __icon__, enabled=monitor.enableinfo)
+                xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
+
+        self.stop()
+    
+
+##########################################################################################################################
+##########################################################################################################################
+##
+##                                                       M  A  I  N
+##
+##########################################################################################################################
+##########################################################################################################################
 
 
 if __name__ == '__main__':
-    monitor = MyMonitor()
-    while not monitor.abortRequested():
-        # Sleep/wait for abort for $refreshcontent seconds
-        if monitor.waitForAbort(float(refreshcontent)):
-            # Abort was requested while waiting. We should exit
-            break
-        skinnermode = addon.getSetting('skinnermode')
-        if skinnermode == 'True':
-            shouldrun = WINDOW.getProperty( "LatestNews.Service" )
-            if shouldrun == "active":
-                if enableinfo == 'true':
-                    xbmc.executebuiltin('XBMC.Notification("NewsCenter" , "aktualisierung wird durchgefuehrt" ,4000,'+icon+')')
-                xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter)')
-        else:
-            if enableinfo == 'true':
-                xbmc.executebuiltin('XBMC.Notification("NewsCenter" , "aktualisierung wird durchgefuehrt" ,4000,'+icon+')')
-            xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter)')
- 
-
+    starter = Starter()
+    starter.start()
+    del starter
 
