@@ -33,17 +33,89 @@ msgctxt "#30011"
 msgid "NewsCenter Widget Rubrik"
 msgstr "NewsCenter Widget Rubrik"
 
+msgctxt "#30093"
+msgid "Bundesland Wetterkarten"
+msgstr "Bundesland Wetterkarten"
+
+msgctxt "#30094"
+msgid "Rundschau in 100 Sekunden"
+msgstr "Rundschau in 100 Sekunden"
+
+msgctxt "#30095"
+msgid "Rundschau 100"
+msgstr "Rundschau 100"
+
+msgctxt "#30096"
+msgid "Die Nachrichtensendung vom NDR"
+msgstr "Die Nachrichtensendung vom NDR"
+
+msgctxt "#30097"
+msgid "NDR Aktuell - Kompakt"
+msgstr "NDR Aktuell - Kompakt"
+
+msgctxt "#30098"
+msgid "Die Videos von wetter.net erklären das Wettergeschehen"
+msgstr "Die Videos von wetter.net erklären das Wettergeschehen"
+
+msgctxt "#30099"
+msgid "wetter.net - Wetter"
+msgstr "wetter.net - Wetter"
+
+msgctxt "#30100"
+msgid "Legende"
+msgstr "Legende"
+
+msgctxt "#30101"
+msgid "Kein Pollenflug"
+msgstr "Kein Pollenflug"
+
+msgctxt "#30102"
+msgid "Wenig Pollenflug"
+msgstr "Wenig Pollenflug"
+
+msgctxt "#30103"
+msgid "Mäßiger Pollenflug"
+msgstr "Mäßiger Pollenflug"
+
+msgctxt "#30104"
+msgid "Starker Pollenflug"
+msgstr "Starker Pollenflug"
+
+msgctxt "#30105"
+msgid "Pollenbelastung"
+msgstr "Pollenbelastung"
+
 msgctxt "#30106"
 msgid "Dienst gestartet"
 msgstr "Dienst gestartet"
+
+msgctxt "#30107"
+msgid "Wetterwarnung"
+msgstr "Wetterwarnung"
 
 msgctxt "#30108"
 msgid "Aktualisiere NewsCenter Daten"
 msgstr "Aktualisiere NewsCenter Daten"
 
+msgctxt "#30109"
+msgid "Deutschland Wetterkarten"
+msgstr "Deutschland Wetterkarten"
+
 msgctxt "#30110"
 msgid "Allgemein"
 msgstr "Allgemein"
+
+msgctxt "#30111"
+msgid "Bundesliga News"
+msgstr "Bundesliga News"
+
+msgctxt "#30112"
+msgid "News Feed Auswahl"
+msgstr "News Feed Auswahl"
+
+msgctxt "#30113"
+msgid "Nachrichten Videos"
+msgstr "Nachrichten Videos"
 
 msgctxt "#30114"
 msgid "Info bei Systemstart und Refresh"
@@ -236,3 +308,66 @@ msgstr "Regen Heute Nacht"
 msgctxt "#30167"
 msgid "Regen Morgen"
 msgstr "Regen Morgen"
+
+
+
+msgctxt "#30168"
+msgid "Zeige Tagesschau"
+msgstr "Zeige Tagesschau"
+
+msgctxt "#30169"
+msgid "Zeige Tagesschau in 100s"
+msgstr "Zeige Tagesschau in 100s"
+
+msgctxt "#30170"
+msgid "Zeige MDR Aktuell 130s"
+msgstr "Zeige MDR Aktuell 130s"
+
+msgctxt "#30171"
+msgid "Zeige NDR kompakt"
+msgstr "Zeige NDR kompakt"
+
+msgctxt "#30172"
+msgid "Zeige BR Rundschau in 100s"
+msgstr "Zeige BR Rundschau in 100s"
+
+msgctxt "#30173"
+msgid "Zeige Logo Kinder Nachrichten"
+msgstr "Zeige Logo Kinder Nachrichten"
+
+msgctxt "#30174"
+msgid "Zeige Tagesschau Wetternews"
+msgstr "Zeige Tagesschau Wetternews"
+
+msgctxt "#30175"
+msgid "Zeige Wetter in 60s"
+msgstr "Zeige Wetter in 60s"
+
+msgctxt "#30176"
+msgid "Zeige Wettersendung von Meteogroup"
+msgstr "Zeige Wettersendung von Meteogroup"
+
+msgctxt "#30177"
+msgid "Zeige Wettersendung von wetter.net"
+msgstr "Zeige Wettersendung von wetter.net"
+
+msgctxt "#30178"
+msgid "Nachrichtensendungen"
+msgstr "Nachrichtensendungen"
+
+msgctxt "#30179"
+msgid "Wettersendungen"
+msgstr "Wettersendungen"
+
+msgctxt "#30180"
+msgid "PLZ"
+msgstr "PLZ"
+
+msgctxt "#30181"
+msgid "Aktueller Default Feed"
+msgstr "Aktueller Default Feed"
+
+msgctxt "#30182"
+msgid "Zeige Unwetter Warn Symbol"
+msgstr "Zeige Unwetter Warn Symbol"
+
