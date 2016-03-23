@@ -35,9 +35,7 @@ Zudem können folgende Direktlinks per Pluginaufruf erfolgen:
 - Tagesschau
 - Tagesschau in 100s
 - Kinder Nachrichten (logo)
-- MDR Aktuell 130s
-- NDR kompakt
-- Rundschau 100
+- Wettervideos
 
 
 Das Widget kann in den Settings konfiguriert werden, welcher Feed angezeigt werden soll. Hierzu stehen folgende NachrichtenQuellen zur Verfügung:
@@ -57,22 +55,7 @@ Desweiteren verfügt das Plugin über ein JSON File, in welchem Aenderungen an den
 
 Im Bereich Sport stellt das NewsCenter Plugin die aktuelle Tabelle der 1. und 2. Bundesliga dar.
 
-Ein weiteres JSON File (Buli.json) dient der Zuordnung des Vereinslogos zur Mannschaft.
-
-Auch die Ergebnisse zum letzten Spieltag können für die 1. und 2. Liga angezeigt werden.
-
-
-Für die Wetterecke gibt es:
-
-Unwetterwarnungen nach PLZ
-Diverse Wetter/Unwetterkarten
-
-Wettervideos von:
--Wetter.info
--Wetter.com
--Tagesschau Wetter
-
-Auch Polleninformation für die nächsten 7 Tage ist mit integriert (PLZ)
+Ein weiteres JSON File (Buli.json) dient der Zuordnung der Ligaid zu Mannschaft (Benötigt für Vereinslogo)
 
 
 
@@ -84,10 +67,19 @@ Um das News-Widget in Confluence zu aktivieren, sind mehrere Schritte notwendig.
 
 
 
-1. Die Datei "script-news.xml in den Confluence Skin-Ordner kopiert werden:
+1. Dateien kopieren:
+ 
+Die Datei "script-news.xml in den Confluence Skin-Ordner kopiert werden:
 
 # cp integration/script-news.xml /usr/share/kodi/addon/skin.confluence/720p/
 
+Die Datei "Custom_NewsCenter.xml" in den Confluence Skin-Ordner kopiert werden:
+
+# cp integration/Custom_NewsCenter.xml /usr/share/kodi/addon/skin.confluence/720p/
+
+Die Bilddateien aus dem integration Ordner in den Confluence Media Ordner kopieren:
+
+# cp integration/*.png /usr/share/kodi/addon/skin.confluence/media/
 
 
 2. Änderungen an der Datei Home.xml:
@@ -148,25 +140,23 @@ Um das News-Widget in Confluence zu aktivieren, sind mehrere Schritte notwendig.
                                         <include>HomeAddonItemsMusic</include>
                                 </content>
                         </control>
---------------------------------------------------
 
-
-Der Newsbutton muss ebenfalls in der Home.xml hinzugefügt werden:
---------------------------------------------------
 .
 .
 .
-                                </focusedlayout>
+.
                                 <content>
-<!-- Start NewsCenter -->
+<!-- Start NewsCente -->
                                         <item id="50505">
-                                                <label>News</label>
-                                                <onclick>RunAddon(plugin.video.tagesschau)</onclick>
+                                                <label>50505</label>
+                                                <onclick>ActivateWindow(4117)</onclick>
                                                 <icon>-</icon>
                                                 <thumb>-</thumb>
-                                                <visible>System.HasAddon(plugin.program.newscenter)</visible>
+                                                <visible>!Skin.HasSetting(HomeMenuNoMovieButton) +  System.HasAddon(plugin.program.newscenter)</visible>
                                         </item>
 <!-- Ende NewsCenter -->
+
+
                                         <item id="7">
                                                 <label>31950</label>
                                                 <onclick>ActivateWindow(Weather)</onclick>
@@ -175,9 +165,6 @@ Der Newsbutton muss ebenfalls in der Home.xml hinzugefügt werden:
                                                 <visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>
                                         </item>
 
-.
-.
-.
 --------------------------------------------------
 
 
@@ -199,13 +186,41 @@ Der Newsbutton muss ebenfalls in der Home.xml hinzugefügt werden:
                 <control type="button" id="50115">
                         <include>ButtonHomeSubCommonValues</include>
                         <label>Tagesschau in 100s</label>
+                        <visible>SubString(Window(Home).Property(NewsCenter.Visible.Tagesschau100), true)</visible>
                         <onclick>RunScript(plugin.program.newscenter,"?methode=play_tagesschau_100")</onclick>
                 </control>
                 <control type="button" id="50101">
                         <include>ButtonHomeSubCommonValues</include>
                         <label>Tagesschau</label>
+                        <visible>SubString(Window(Home).Property(NewsCenter.Visible.Tagesschau), true)</visible>
                         <onclick>RunScript(plugin.program.newscenter,"?methode=play_tagesschau")</onclick>
                 </control>
+                <control type="button" id="50118">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>MDR Aktuell 130s</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.NDRKompakt),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_mdr_aktuell_130")</onclick>
+                </control>
+                <control type="button" id="50119">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>Kinder News</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.KinderNachrichten),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_kinder_nachrichten")</onclick>
+                </control>
+                <control type="button" id="50120">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>BR Rundschau 100s</label>
+                        <visible>SubString(Window(Home).Property(NewsCenter.Visible.BRRundschau100),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_rundschau100")</onclick>
+                </control>
+                <control type="button" id="50121">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>NDR Aktuell kompakt</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.NDRKompakt),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_ndrkompakt")</onclick>
+                </control>
+
+
                 <control type="button" id="50116">
                         <include>ButtonHomeSubCommonValues</include>
                         <label>Feed Auswahl</label>
@@ -219,13 +234,29 @@ Der Newsbutton muss ebenfalls in der Home.xml hinzugefügt werden:
                 <control type="button" id="50102">
                         <include>ButtonHomeSubCommonValues</include>
                         <label>Wetter in 60s</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.Wetter60),true)</visible>
                         <onclick>RunScript(plugin.program.newscenter,"?methode=play_wetteronline")</onclick>
                 </control>
                 <control type="button" id="50103">
                         <include>ButtonHomeSubCommonValues</include>
                         <label>Wetter</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.WetterInfo),true)</visible>
                         <onclick>RunScript(plugin.program.newscenter,"?methode=play_wetterinfo")</onclick>
                 </control>
+                <control type="button" id="561032">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>Wetter.net</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.WetterNet),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_wetternet")</onclick>
+                </control>
+                <control type="button" id="561033">
+                        <include>ButtonHomeSubCommonValues</include>
+                        <label>Tagesschau Wetter</label>
+                        <visible>SubString(Window.Property(NewsCenter.Visible.TagesschauWetter),true)</visible>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=play_tagesschauwetter")</onclick>
+                </control>
+
+
                 <control type="image" id="90126">
                         <width>35</width>
                         <height>35</height>
@@ -330,21 +361,77 @@ XBMC.RunScript(plugin.program.newscenter,"?methode=set_default_feed")
 - show_select_dialog
 - show_buli_select
 - show_bulilist (benötigt Parameter buliliga=[1|2] & bulipage=[1|2]
+- show_livestream_select_dialog
 
 
-- play_tagesschauwetter
-- play_mdr_aktuell_130
-- play_rundschau100
-- play_ndraktuellkompakt
-- get_buli_spielplan_items
-- get_buli_table_items
-- get_wetter_pics
-- get_all_wetter_pics
-- get_pollen_items
-- get_unwetter_warnungen
-- get_uwz_maps
+Methoden Auflistung:
+====================
 
 
+Dienst:
+=======
+methode=start_service
+methode=stop_service
+methode=set_skinmode
+methode=unset_skinmode
+methode=set_default_feed
+methode=get_uwz_count
+methode=refresh
+
+Videos:
+=======
+methode=play_tagesschau
+methode=play_tagesschau_100
+methode=play_wetteronline
+methode=play_wetterinfo
+methode=play_wetternet
+methode=play_tagesschauwetter
+methode=play_kinder_nachrichten
+methode=play_mdr_aktuell_130
+methode=play_rundschau100
+methode=play_ndraktuellkompakt
+
+Livestreams:
+============
+methode=play_livestream_euronews
+methode=play_livestream_ntv
+methode=play_livestream_n24
+methode=play_livestream_tagesschau24
+methode=play_livestream_phoenix
+methode=play_livestream_dw
+
+
+Dialoge:
+========
+methode=show_select_dialog
+methode=show_livestream_select_dialog
+methode=show_buli_select
+methode=show_bulilist
+methode=show_bulispielplan
+methode=show_bulinaechsterspieltag
+methode=show_unwetter_warnungen
+
+
+Container:
+==========
+methode=get_buli_spielplan_items
+methode=get_buli_table_items
+methode=get_buli_naechsterspieltag_items
+methode=get_feed_items
+methode=get_pollen_items
+methode=get_unwetter_warnungen
+
+
+Wetterkarten-Container:
+=======================
+methode=get_dwd_pics_base
+methode=get_dwd_pics_base_uwz
+methode=get_dwd_pics_extended
+methode=get_dwd_pics_bundesland
+methode=get_dwd_pics_bundesland_uwz
+methode=get_dwd_pics_base_extended
+methode=get_euronews_wetter_pics
+methode=get_uwz_maps
 
 
 
@@ -359,3 +446,7 @@ LatestNews.<nr>.Logo                  - RSS Bild
 LatestNews.<nr>.Date                  - RSS Artikel Veröffentlichung
 LatestNews.<nr>.HeaderPic             - RSS Provider Bild
 
+NewsCenter.PLZ                        - Postleitzahl aus den Settings
+NewsCenter.Bundesland                 - Ermitteltes Bundesland (von PLZ)
+
+NewsCenter.Unwetter.Anzahl            - Anzahl Unwetterwarnungen
