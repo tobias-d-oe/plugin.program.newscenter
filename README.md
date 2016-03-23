@@ -2,17 +2,44 @@
 Beschreibung:
 =============
 
-Das Plugin plugin.program.newscenter gibt Skinnern die Möglichkeit einen Nachrichten-Feed als Widget in den Skin zu integrieren.
-Zudem können folgende Direktlinks per Pluginaufruf erfolgen:
+Das Plugin plugin.program.newscenter gibt Skinnern die MÃ¶glichkeit Nachrichten in ihren Skin zu integrieren.
+HierfÃ¼r stehen die folgenden Module zur VerfÃ¼gung:
+
+- Nachrichten-Feed mit Bild, welcher als Widget in den Skin integriert werden kann.
+- Nachrichten Videos (die wichtigsten Nachhrichtensendungen per Direktaufruf)
+- Nachrichten LiveTV (die wichtigsten Nachhrichtensender per Direktaufruf)
+- Bundesligainnformationen (Tabelle, aktueller Spieltag, nÃ¤chster Spieltag)
+- Unwetterwarnungen per PLZ
+- Unwetter-Warn-Icon
+- Wetterkarten (verschiedene Zusammenstellungen von Wetterkarten/videos von DWD/UWZ/Euronews)
+- Wetter Videos (die wichtigsten Wettersendungen per Direktaufruf)
+- Pollenflugvorhersage 7 Tage per PLZ
+
+Um das Plugin zu nutzen bedarf es eines angepassten Skins! FÃ¼r Confluence ist eine Anleitung zur Skintegration enthalten.
+
+
+Aktuell stehen folgende Nachrichten/Wetter-Videos als Direktlink zur VerfÃ¼gung:
 - Tagesschau
 - Tagesschau in 100s
 - Kinder Nachrichten (logo)
 - MDR Aktuell 130s
 - NDR kompakt
 - Rundschau 100
+- Wetter.net
+- Wetter.info
+- Wetter Online
+- Tagesschau Wetter
+
+Im LiveTV bereich kann zwischen folgenden Sendern gewÃ¤hlt werden:
+- tagesschau24
+- euronews
+- Deutsche Welle
+- ntv
+- n24
+- Phoenix
 
 
-Das Widget kann in den Settings konfiguriert werden, welcher Feed angezeigt werden soll. Hierzu stehen folgende NachrichtenQuellen zur Verfügung:
+Das Widget kann in den Settings konfiguriert werden, welcher Feed angezeigt werden soll. Hierzu stehen eine Reihe an Nachrichtenquellen zur VerfÃ¼gung:
 - Spiegel Online
 - n-tv
 - tagesschau.de
@@ -24,24 +51,15 @@ Das Widget kann in den Settings konfiguriert werden, welcher Feed angezeigt werd
 - Sport 1
 - ...
 
-Desweiteren verfügt das Plugin über ein JSON File, in welchem Aenderungen an den Feeds als auch Neue Feeds hinzugefügt werden können. 
+Desweiteren verfÃ¼gt das Plugin Ã¼ber ein JSON File, in welchem Ã„nderungen an den Feeds dÃ¼rchgefÃ¼hrt werden, als auch Neue Feeds hinzugefÃ¼gt werden kÃ¶nnen. 
 (NewsFeeds.json)
 
 Im Bereich Sport stellt das NewsCenter Plugin die aktuelle Tabelle der 1. und 2. Bundesliga dar.
+Ausserdem kÃ¶nnen ebenfalls fÃ¼r die 1. und 2. Bundesliga Ergebnisse des aktuellen Spieltages als auch Informationen zum nÃ¤chsten Spieltag abgerufen werden.
 
-Ein weiteres JSON File (Buli.json) dient der Zuordnung des Vereinslogos zur Mannschaft.
+FÃ¼r die Wetterecke gibt es:
 
-Auch die Ergebnisse zum letzten Spieltag können für die 1. und 2. Liga angezeigt werden.
-
-
-Für die Wetterecke gibt es:
-
-Unwetterwarnungen nach PLZ
-Diverse Wetter/Unwetterkarten
-
-Wettervideos von:
--Wetter.info
--Wetter.com
--Tagesschau Wetter
-
-Auch Polleninformation für die nächsten 7 Tage ist mit integriert (PLZ)
+- Unwetterwarnungen nach PLZ
+- Unwetter-Warn-Icon
+- Diverse Wetter/Unwetterkarten vom Deutschen Wetterdienst, Unwetterzentrale und Euronews. 
+  Sowohl Deutschland als auch per autoerkennung das jeweilige Bundesland (PLZ)
