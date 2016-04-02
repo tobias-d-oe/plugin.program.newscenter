@@ -33,6 +33,66 @@ msgctxt "#30011"
 msgid "NewsCenter Widget Rubrik"
 msgstr "NewsCenter Widget Rubrik"
 
+msgctxt "#30078"
+msgid "Aktuelle, unabhängige Weltnachrichten von Europas führendem Nachrichtensender."
+msgstr "Aktuelle, unabhängige Weltnachrichten von Europas führendem Nachrichtensender."
+
+msgctxt "#30079"
+msgid "Nachrichten seriös, schnell und kompetent. Nachrichten aus Politik, Wirtschaft, Börse, Sport."
+msgstr "Nachrichten seriös, schnell und kompetent. Nachrichten aus Politik, Wirtschaft, Börse, Sport."
+
+msgctxt "#30080"
+msgid "N24 - Deutschlands führender Nachrichtensender - Nachrichten - Sport - Wissen - Dokumentationen."
+msgstr "N24 - Deutschlands führender Nachrichtensender - Nachrichten - Sport - Wissen - Dokumentationen."
+
+msgctxt "#30081"
+msgid "tagesschau24.de bietet Ihnen eine Übersicht über das Programm des Senders der ARD."
+msgstr "tagesschau24.de bietet Ihnen eine Übersicht über das Programm des Senders der ARD."
+
+msgctxt "#30082"
+msgid "Ereignis- und Dokumentationskanal der öffentlich-rechtlichen Sendeanstalten."
+msgstr "Ereignis- und Dokumentationskanal der öffentlich-rechtlichen Sendeanstalten."
+
+msgctxt "#30083"
+msgid "Die Deutsche Welle ist der staatliche Auslandsrundfunk der Bundesrepublik Deutschland und Mitglied der ARD."
+msgstr "Die Deutsche Welle ist der staatliche Auslandsrundfunk der Bundesrepublik Deutschland und Mitglied der ARD."
+
+msgctxt "#30084"
+msgid "Livestream Deutsche Welle"
+msgstr "Livestream Deutsche Welle"
+
+msgctxt "#30085"
+msgid "Livestream Phoenix"
+msgstr "Livestream Phoenix"
+
+msgctxt "#30086"
+msgid "Livestream Tagesschau 24"
+msgstr "Livestream Tagesschau 24"
+
+msgctxt "#30087"
+msgid "Livestream N24"
+msgstr "Livestream N24"
+
+msgctxt "#30088"
+msgid "Livestream N-TV"
+msgstr "Livestream N-TV"
+
+msgctxt "#30089"
+msgid "Livestream Euronews"
+msgstr "Livestream Euronews"
+
+msgctxt "#30090"
+msgid "Nachrichten Livestreams"
+msgstr "Nachrichten Livestreams"
+
+msgctxt "#30091"
+msgid "Nächste Spiele 1.Liga"
+msgstr "Nächste Spiele 1.Liga"
+
+msgctxt "#30092"
+msgid "Nächste Spiele 2.Liga"
+msgstr "Nächste Spiele 2.Liga"
+
 msgctxt "#30093"
 msgid "Bundesland Wetterkarten"
 msgstr "Bundesland Wetterkarten"
@@ -138,24 +198,24 @@ msgid "Die Videos von wetter.info erklären das Wettergeschehen"
 msgstr "Die Videos von wetter.info erklären das Wettergeschehen"
 
 msgctxt "#30125"
-msgid "1.Bundesliga Spielplan"
-msgstr "1.Bundesliga Spielplan"
+msgid "1.Liga Spielplan"
+msgstr "1.Liga Spielplan"
 
 msgctxt "#30126"
-msgid "2.Bundesliga Spielplan"
-msgstr "2.Bundesliga Spielplan"
+msgid "2.Liga Spielplan"
+msgstr "2.Liga Spielplan"
 
 msgctxt "#30127"
 msgid "Aktualisierungsinterval Content"
 msgstr "Aktualisierungsinterval Content"
 
 msgctxt "#30128"
-msgid "1.Bundesliga Tabelle"
-msgstr "1.Bundesliga Tabelle"
+msgid "1.Liga Tabelle"
+msgstr "1.Liga Tabelle"
 
 msgctxt "#30129"
-msgid "2.Bundesliga Tabelle"
-msgstr "2.Bundesliga Tabelle"
+msgid "2.Liga Tabelle"
+msgstr "2.Liga Tabelle"
 
 msgctxt "#30130"
 msgid "In komprimierter Fassung von anderthalb Minuten informieren wir Sie über die aktuellen Nachrichten des Tages."
