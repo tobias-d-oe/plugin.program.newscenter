@@ -22,15 +22,15 @@ Aktuell stehen folgende Nachrichten/Wetter-Videos als Direktlink zur Verfügung:
 - Tagesschau
 - Tagesschau in 100s
 - Kinder Nachrichten (logo)
-- MDR Aktuell 130s
-- NDR kompakt
+- MDR Aktuell 130s ( Haben aktuell Probleme mit RSS )
+- NDR kompakt ( Sendung existiert niicht mehr )
 - Rundschau 100
 - Wetter.net
 - Wetter.info
 - Wetter Online
 - Tagesschau Wetter
 
-Im LiveTV bereich kann zwischen folgenden Sendern gewählt werden:
+Im LiveTV Bereich kann zwischen folgenden Sendern gewählt werden:
 - tagesschau24
 - euronews
 - Deutsche Welle
