@@ -33,8 +33,7 @@
                                 <width>730</width>
                                 <height>30</height>
                                 <font>font13_title</font>
-                                <label>Bundesliga Nächster Spieltag</label>  
-                       <!--         <label>$ADDON[plugin.program.tvhighlights  30100]</label>  -->
+                                <label>$ADDON[plugin.program.newscenter  30197]</label>  
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <textcolor>selected</textcolor>
@@ -47,7 +46,7 @@
                                 <width>770</width>
                                 <height>36</height>
                                 <font>font24_title</font>
-                                <label>Nächste Spiele in der $INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]. Bundesliga</label>
+                                <label>$ADDON[plugin.program.newscenter  30198] $INFO[Window(Home).Property(NewsCenter.Buli.LigaInfo)]. $ADDON[plugin.program.newscenter  30199]</label>
                                 <align>center</align>
                                 <aligny>center</aligny>
                         </control>

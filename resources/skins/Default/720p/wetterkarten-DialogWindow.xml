@@ -1,4 +1,4 @@
-<!-- plugin.program.newscenter - Unwetterwarnungen - START -->
+<!-- plugin.program.newscenter - Unwetterkarten - START -->
 <!-- Confluence Skin adapted -->
 <window>
         <defaultcontrol always="true">10</defaultcontrol>
@@ -33,8 +33,7 @@
                                 <width>730</width>
                                 <height>30</height>
                                 <font>font13_title</font>
-                                <label>Wetterkarten - $INFO[Window(Home).Property(NewsCenter.PLZ)] - $INFO[Window(Home).Property(NewsCenter.Bundesland)]</label>  
-                       <!--         <label>$ADDON[plugin.program.tvhighlights  30100]</label>  -->
+                                <label>$ADDON[plugin.program.newscenter  30207] - $INFO[Window(Home).Property(NewsCenter.PLZ)] - $INFO[Window(Home).Property(NewsCenter.Bundesland)]</label>  
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <textcolor>selected</textcolor>
@@ -69,8 +68,8 @@
                                 <top>60</top>
                                 <width>770</width>
                                 <height>600</height>
-                                <onleft>10</onleft>
-                                <onright>855655</onright>
+                                <onup>10</onup>
+                                <ondown>10</ondown>
                                 <viewtype label="535">list</viewtype>
                                 <pagecontrol>-</pagecontrol>
                                 <scrolltime>200</scrolltime>
@@ -111,9 +110,23 @@
                                               <height>500</height>
                                               <align>center</align>
                                               <aspectratio aligny="bottom">keep</aspectratio>
-                                              <texture border="0">$INFO[ListItem.Icon]</texture>
+                                              <texture border="5">$INFO[ListItem.Icon]</texture>
+                                              <bordertexture border="5">folder-focus.png</bordertexture>
+                                              <bordersize>5</bordersize>
+                                              <visible>Control.HasFocus(77377)</visible>
                                     </control>
-            
+ 
+                                    <control type="image">
+                                              <left>10</left>
+                                              <top>60</top>
+                                              <width>750</width>
+                                              <height>500</height>
+                                              <align>center</align>
+                                              <aspectratio aligny="bottom">keep</aspectratio>
+                                              <texture border="0">$INFO[ListItem.Icon]</texture>
+                                              <visible>!Control.HasFocus(77377)</visible>
+                                    </control>
+           
                                     <control type="label">
                                               <left>10</left>
                                               <top>0</top>
@@ -130,7 +143,7 @@
 
 
                                 </focusedlayout>
-                                <content>plugin://plugin.program.newscenter?methode=get_dwd_pics_base_extended</content> 
+                                <content>plugin://plugin.program.newscenter?methode=get_uwz_maps</content> 
             <!--  E N D E - NR 1 -->
             
                         </control>
