@@ -175,7 +175,6 @@ nb   = NewsBuli()
 nf   = NewsFeed()
 
 
-
 if len(sys.argv)==3:
     addon_handle = int(sys.argv[1])
     params = ph.parameters_string_to_dict(sys.argv[2])
@@ -183,17 +182,20 @@ if len(sys.argv)==3:
     buliliga = urllib.unquote_plus(params.get('buliliga', ''))
     url = urllib.unquote_plus(params.get('url', ''))
     headerpic = urllib.unquote_plus(params.get('headerpic', ''))
+    clickable = urllib.unquote_plus(params.get('clickable', ''))
 elif len(sys.argv)>1:
     params = ph.parameters_string_to_dict(sys.argv[1])
     methode = urllib.unquote_plus(params.get('methode', ''))
     buliliga = urllib.unquote_plus(params.get('buliliga', ''))
     url = urllib.unquote_plus(params.get('url', ''))
     headerpic = urllib.unquote_plus(params.get('headerpic', ''))
+    clickable = urllib.unquote_plus(params.get('clickable', ''))
 else:
     methode = None
     buliliga = 1
 
-
+if clickable == '':
+    clickable = 1
 
 ph.writeLog("Methode in Script: %s" % (methode),level=xbmc.LOGDEBUG )
 
@@ -426,25 +428,25 @@ elif methode=='get_feed_items':
 
 # Wetterkarten
 elif methode=='get_dwd_pics_base':
-        nwk.DWD_Base()
+        nwk.DWD_Base(clickable)
 
 elif methode=='get_dwd_pics_base_uwz':
-        nwk.DWD_Base_UWZ()
+        nwk.DWD_Base_UWZ(clickable)
 
 elif methode=='get_dwd_pics_extended':
-        nwk.DWD_Extended()
+        nwk.DWD_Extended(clickable)
 
 elif methode=='get_dwd_pics_bundesland':
-        nwk.DWD_Bundesland()
+        nwk.DWD_Bundesland(clickable)
 
 elif methode=='get_dwd_pics_bundesland_uwz':
-        nwk.DWD_Bundesland_UWZ()
+        nwk.DWD_Bundesland_UWZ(clickable)
 
 elif methode=='get_dwd_pics_base_extended':
-        nwk.DWD_Base_Extended()
+        nwk.DWD_Base_Extended(clickable)
 
 elif methode=='get_euronews_wetter_pics':
-        nwk.Euronews()
+        nwk.Euronews(clickable)
 
 
 
@@ -473,7 +475,7 @@ elif methode=='get_uwz_count':
             xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
 
 elif methode=='get_uwz_maps':
-        nwk.UWZ()
+        nwk.UWZ(clickable)
 
 elif methode=='show_unwetter_warnungen':
 	show_unwetterwarnungen()
