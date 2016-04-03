@@ -9,6 +9,8 @@ import xbmcplugin
 import json
 import random
 import sys
+import urllib2
+import re
 
 class NewsCenterGeoHelper():
     def __init__(self):
@@ -32,8 +34,15 @@ class NewsCenterGeoHelper():
                 return i['bundesland']
         return 0    
 
-
-
+    def plz2ort(self,plz):
+        url = "http://www1.dasoertliche.de/Controller?zvo_ok=&book=&plz=&quarter=&district=&ciid=&pc=%s&image=Finden&buc=&kgs=&searchType=plz&buab=&zbuab=&page=210&context=5&action=43&form_name=search_pc" % (plz)
+        req = urllib2.urlopen(url)
+        content = req.read()
+        ort = re.compile('<input type="hidden" name="ci" value="(.+?)"/>', re.DOTALL).findall(content)[0]
+        ort = unicode(ort, "ISO-8859-15")
+        return ort
+    
+    
 
 
 
