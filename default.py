@@ -501,10 +501,10 @@ elif methode=='refresh':
         nf.feed2property(url, pic)
 
         if __addon__.getSetting('plz') != '':
-            ngh = NewsCenterGeoHelper()
             nuwz.WarnAnzahl("DE", __addon__.getSetting('plz'))
             WINDOW.setProperty( "NewsCenter.PLZ", __addon__.getSetting('plz') )
-            WINDOW.setProperty( "NewsCenter.Bundesland", ngh.plz2bundesland(__addon__.getSetting('plz')) )
+            WINDOW.setProperty( "NewsCenter.Bundesland", __addon__.getSetting('storebundesland') )
+            WINDOW.setProperty( "NewsCenter.Ort", __addon__.getSetting('storeort') )
         else:
             xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
         # To Remove: LatestDokus Widget

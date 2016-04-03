@@ -29,6 +29,7 @@
 
 import os,sys,xbmc,xbmcgui,xbmcaddon
 from resources.lib.NewsBuli import PluginHelpers
+from resources.lib.NewsWetterKarten import NewsCenterGeoHelper
 
 __addon__     = xbmcaddon.Addon()
 __addonID__   = __addon__.getAddonInfo('id')
@@ -58,13 +59,13 @@ class MyMonitor( xbmc.Monitor ):
     ##
     ##########################################################################################################################
     def onSettingsChanged( self ):
-        self.settings_initialize()
+        if self.settings_setlocation() == 1:
+            self.settings_initialize()
 
     ##########################################################################################################################
     ##
     ##########################################################################################################################
     def get_settings(self):
-        ph = PluginHelpers()
         ph.writeLog("Settings (re)loaded")
         self.show_tagesschau         = __addon__.getSetting('show_tagesschau').strip()
         self.show_tagesschau100      = __addon__.getSetting('show_tagesschau100').strip()
@@ -113,6 +114,21 @@ class MyMonitor( xbmc.Monitor ):
         WINDOW.setProperty("NewsCenter.Visible.WetterInfo",        self.show_wetterinfo)
         WINDOW.setProperty("NewsCenter.Visible.WetterNet",         self.show_wetternet)
         WINDOW.setProperty("NewsCenter.Visible.UnwetterWarnIcon",  self.show_unwetter_warn_icon)
+
+    ##########################################################################################################################
+    ##
+    ##########################################################################################################################
+    def settings_setlocation(self):
+        plz = __addon__.getSetting('plz')
+        gh = NewsCenterGeoHelper()
+        ort = gh.plz2ort(plz)
+        bundesland = gh.plz2bundesland(plz)
+        if unicode(__addon__.getSetting('storeort'),'utf-8') != ort:
+            __addon__.setSetting('storeort',ort) 
+            __addon__.setSetting('storebundesland',bundesland) 
+            return 0
+        return 1
+
     ##########################################################################################################################
     ##
     ##########################################################################################################################

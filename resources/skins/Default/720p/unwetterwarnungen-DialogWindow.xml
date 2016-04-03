@@ -46,7 +46,7 @@
                                 <width>770</width>
                                 <height>36</height>
                                 <font>font24_title</font>
-                                <label>$ADDON[plugin.program.newscenter  30205] $INFO[Window(Home).Property(NewsCenter.PLZ)] ($INFO[Window(Home).Property(NewsCenter.Bundesland)])</label>
+                                <label>$ADDON[plugin.program.newscenter  30205] $INFO[Window(Home).Property(NewsCenter.PLZ)] $INFO[Window(Home).Property(NewsCenter.Ort)] ($INFO[Window(Home).Property(NewsCenter.Bundesland)])</label>
                                 <align>center</align>
                                 <aligny>center</aligny>
                         </control>
