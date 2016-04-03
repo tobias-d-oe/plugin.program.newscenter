@@ -124,18 +124,23 @@ class NewsWetterKarten():
         rand       = "?%04.0f" % (random.uniform(10000, 99999))
         url        = ''
     
+        url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland aktuell', iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(self, url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland 2.-4. Tag', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand)
         li = xbmcgui.ListItem('Europa morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand)
         li = xbmcgui.ListItem('Welt morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
@@ -154,23 +159,28 @@ class NewsWetterKarten():
         rand       = "?%04.0f" % (random.uniform(10000, 99999))
         url        = ''
     
+        url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland aktuell', iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
-    
+
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand)    
         li = xbmcgui.ListItem('Deutschland 2.-4. Tag', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand)
         li = xbmcgui.ListItem('Europa morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand)
         li = xbmcgui.ListItem('Welt morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
-        deutschlanduwz="http://www.unwetterzentrale.de/images/map/deutschland_index.png"
-        li = xbmcgui.ListItem("Unwetterkarte von Deutschland", iconImage=deutschlanduwz)
+        url="http://www.unwetterzentrale.de/images/map/deutschland_index.png"
+        li = xbmcgui.ListItem("Unwetterkarte von Deutschland", iconImage=url)
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
         xbmcplugin.endOfDirectory(int(sys.argv[1]))
@@ -190,48 +200,63 @@ class NewsWetterKarten():
         rand       = "?%04.0f" % (random.uniform(10000, 99999))
         url        = ''
     
+        url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('%s aktuell' % (Bundesland), iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/radar/rad_%s_akt.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Niederschlagsradar', iconImage='http://www.dwd.de/DWD/wetter/radar/rad_%s_akt.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/radar/radfilm_%s_akt.gif%s' % (bl,rand)
         li = xbmcgui.ListItem('Niederschlagsradar Film', iconImage='http://www.dwd.de/DWD/wetter/radar/radfilm_%s_akt.gif%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_start.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_start.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutefrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutefrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutemittag.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Mittag', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutemittag.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutespaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutespaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutenacht.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Nacht', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutenacht.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenfrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Morgen Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenfrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenspaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Morgen Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenspaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenfrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Übermorgen Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenfrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenspaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Übermorgen Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenspaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4frueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage 4. Tag Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4frueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4spaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage 4. Tag Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4spaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/trendpic_%s.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Wettertrend', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/trendpic_%s.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
@@ -251,53 +276,68 @@ class NewsWetterKarten():
         rand       = "?%04.0f" % (random.uniform(10000, 99999))
         url        = ''
     
+        url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('%s aktuell' % (Bundesland), iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/radar/rad_%s_akt.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Niederschlagsradar', iconImage='http://www.dwd.de/DWD/wetter/radar/rad_%s_akt.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/radar/radfilm_%s_akt.gif%s' % (bl,rand)
         li = xbmcgui.ListItem('Niederschlagsradar Film', iconImage='http://www.dwd.de/DWD/wetter/radar/radfilm_%s_akt.gif%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_start.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_start.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutefrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutefrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutemittag.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Mittag', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutemittag.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutespaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutespaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutenacht.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Heute Nacht', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_heutenacht.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenfrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Morgen Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenfrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenspaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Morgen Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_morgenspaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenfrueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Übermorgen Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenfrueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenspaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage Übermorgen Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_uebermorgenspaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4frueh.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage 4. Tag Früh', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4frueh.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4spaet.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Vorhersage 4. Tag Spät', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/vhs_%s_tag4spaet.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url = 'http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/trendpic_%s.jpg%s' % (bl,rand)
         li = xbmcgui.ListItem('Wettertrend', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/bilder/trendpic_%s.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
-    
-        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=self.plz2uwzmap(plz))
+        url = self.plz2uwzmap(plz)
+        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=url)
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
     
@@ -337,19 +377,24 @@ class NewsWetterKarten():
         Bundesland = gh.plz2bundesland(plz).encode('utf-8')
         rand       = "?%04.0f" % (random.uniform(10000, 99999))
         url        = ''
-    
+   
+        url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand) 
         li = xbmcgui.ListItem('Deutschland aktuell', iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url ='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand)
         li = xbmcgui.ListItem('Deutschland morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/vhs_deutschland.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
-    
+
+        url ='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand)    
         li = xbmcgui.ListItem('Deutschland 2.-4. Tag', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/deutschland/film/trendpic.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url ='http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand)
         li = xbmcgui.ListItem('Europa morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/europa/film/europavhs.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url ='http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand)
         li = xbmcgui.ListItem('Welt morgen', iconImage='http://www.dwd.de/DWD/wetter/wv_allg/welt/film/vhs_welt.jpg%s' % (rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
@@ -377,41 +422,53 @@ class NewsWetterKarten():
     def Euronews(self):
         url        = ''
     
+        url= 'http://de.euronews.com/import/reg05_summary_today.gif'
         li = xbmcgui.ListItem('Wettervorhersage Heute', iconImage='http://de.euronews.com/import/reg05_summary_today.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_summary_tonight.gif'
         li = xbmcgui.ListItem('Wettervorhersage Heute Nacht', iconImage='http://de.euronews.com/import/reg05_summary_tonight.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_summary_tomorrow.gif'
         li = xbmcgui.ListItem('Wettervorhersage Morgen', iconImage='http://de.euronews.com/import/reg05_summary_tomorrow.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_winds_today.gif'
         li = xbmcgui.ListItem('Wind Heute', iconImage='http://de.euronews.com/import/reg05_winds_today.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_winds_tonight.gif'
         li = xbmcgui.ListItem('Wind Heute Nacht', iconImage='http://de.euronews.com/import/reg05_winds_tonight.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_winds_tomorrow.gif'
         li = xbmcgui.ListItem('Wind Morgen', iconImage='http://de.euronews.com/import/reg05_winds_tomorrow.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
     
+        url= 'http://de.euronews.com/import/reg05_temp_today.gif'
         li = xbmcgui.ListItem('Temperaturen Heute', iconImage='http://de.euronews.com/import/reg05_temp_today.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_temp_tonight.gif'
         li = xbmcgui.ListItem('Temperaturen Heute Nacht', iconImage='http://de.euronews.com/import/reg05_temp_tonight.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_temp_tomorrow.gif'
         li = xbmcgui.ListItem('Temperaturen Morgen', iconImage='http://de.euronews.com/import/reg05_temp_tomorrow.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
     
+        url= 'http://de.euronews.com/import/reg05_precip_today.gif'
         li = xbmcgui.ListItem('Regen Heute', iconImage='http://de.euronews.com/import/reg05_precip_today.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
+        url= 'http://de.euronews.com/import/reg05_precip_tonight.gif'
         li = xbmcgui.ListItem('Regen Heute Nacht', iconImage='http://de.euronews.com/import/reg05_precip_tonight.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
-    
+
+        url = 'http://de.euronews.com/import/reg05_precip_tomorrow.gif'    
         li = xbmcgui.ListItem('Regen Morgen', iconImage='http://de.euronews.com/import/reg05_precip_tomorrow.gif')
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
@@ -430,11 +487,12 @@ class NewsWetterKarten():
         Bundesland = gh.plz2bundesland(plz).encode('utf-8')
         url        = ''
 
-        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=self.plz2uwzmap(plz))
+        url = self.plz2uwzmap(plz)
+        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=url)
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
-        deutschlanduwz="http://www.unwetterzentrale.de/images/map/deutschland_index.png"
-        li = xbmcgui.ListItem("Unwetterkarte von Deutschland", iconImage=deutschlanduwz)
+        url="http://www.unwetterzentrale.de/images/map/deutschland_index.png"
+        li = xbmcgui.ListItem("Unwetterkarte von Deutschland", iconImage=url)
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
         xbmcplugin.endOfDirectory(int(sys.argv[1]))
