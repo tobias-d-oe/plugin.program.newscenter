@@ -279,16 +279,16 @@ elif methode=='show_select_dialog':
     for f in allfeeds:
         feedname.append(f['name'])
     dialog       = xbmcgui.Dialog()
-    ret          = dialog.select("News Auswahl",feedname)
+    ret          = dialog.select(str(__LS__(30112)),feedname)
     headerpic    = allfeeds[ret]['pic']
     url          = allfeeds[ret]['url']
     notifyheader = str(__LS__(30010))
-    xbmc.executebuiltin('XBMC.Notification('+notifyheader+', "Update Latest News Feed - Dieser Vorgang kann etwas dauern... bitte Geduld." ,8000,'+__icon__+')')
+    xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30150))+' ,8000,'+__icon__+')')
     nf.feed2property(url, headerpic)
 
 elif methode=='show_livestream_select_dialog':
     dialog = xbmcgui.Dialog()
-    ret = dialog.select("Livestream Auswahl", ["Tagesschau 24", "Euronews", "ntv", "n24", "Phoenix", "Deutsche Welle"])
+    ret = dialog.select(__LS__(30190), [__LS__(30191), __LS__(30192), __LS__(30193), __LS__(30194), __LS__(30195), __LS__(30196)])
     if ret == 0:
         nls.PlayTagesschau24()
     elif ret == 1:
@@ -304,7 +304,7 @@ elif methode=='show_livestream_select_dialog':
 
 elif methode=='show_buli_select':
     dialog = xbmcgui.Dialog()
-    ret = dialog.select("Sport Auswahl", ["Tabelle 1. Bundesliga", "Tabelle 2. Bundesliga", "Ergebnisse 1. Bundesliga", "Ergebnisse 2. Bundesliga", "Naechste Spiele 1. Bundesliega", "Naechste Spiele 2. Bundesliega"])
+    ret = dialog.select(str(__LS__(30153)), [str(__LS__(30128)), str(__LS__(30129)), str(__LS__(30125)), str(__LS__(30126)), __LS__(30091), __LS__(30092)])
     if ret == 0:
         WINDOW.setProperty("NewsCenter.Buli.LigaInfo", "1" )
         show_bulilist(1)        
@@ -335,7 +335,7 @@ elif methode=='set_default_feed':
         feedname.append(f['name'])
 
     dialog = xbmcgui.Dialog()
-    ret = dialog.select("Default News Auswahl",feedname)
+    ret = dialog.select(str(__LS__(30155)),feedname)
     defaultfeedname=allfeeds[ret]['name']
     __addon__.setSetting('storedefault',defaultfeedname)
 
@@ -463,14 +463,14 @@ elif methode=='get_unwetter_warnungen':
             nuwz.Warnungen("DE", __addon__.getSetting('plz'))
         else:
             notifyheader= str(__LS__(30010))
-            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', "Bitte PLZ in den Einstellungen festlegen" ,4000,'+__icon__+')')
+            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
 
 elif methode=='get_uwz_count':
         if __addon__.getSetting('plz') != '':
             nuwz.WarnAnzahl("DE", __addon__.getSetting('plz'))
         else:
             notifyheader=str(__LS__(30010))
-            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', "Bitte PLZ in den Einstellungen festlegen" ,4000,'+__icon__+')')
+            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
 
 elif methode=='get_uwz_maps':
         nwk.UWZ()
@@ -506,7 +506,7 @@ elif methode=='refresh':
             WINDOW.setProperty( "NewsCenter.PLZ", __addon__.getSetting('plz') )
             WINDOW.setProperty( "NewsCenter.Bundesland", ngh.plz2bundesland(__addon__.getSetting('plz')) )
         else:
-            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', "Bitte PLZ in den Einstellungen setzen!" ,4000,'+__icon__+')')
+            xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
         # To Remove: LatestDokus Widget
         set_LatestDokus_to_Home('http://doku.cc/api.php?get=new-dokus&page=1')
 
@@ -523,6 +523,6 @@ elif methode==None:
     headerpic=allfeeds[ret]['pic']
     url=allfeeds[ret]['url']
     notifyheader= str(__LS__(30010))
-    xbmc.executebuiltin('XBMC.Notification('+notifyheader+', "Update Latest News Feed - Dieser Vorgang kann etwas dauern... bitte Geduld." ,8000,'+__icon__+')')
+    xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30150))+' ,8000,'+__icon__+')')
     nf.feed2property(url, headerpic)
 

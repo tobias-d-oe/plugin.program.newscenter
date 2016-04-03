@@ -166,10 +166,10 @@ class Starter():
             if monitor.skinnermode == 'True':
                 shouldrun = WINDOW.getProperty( "LatestNews.Service" )
                 if shouldrun == "active":
-                    ph.notifyOSD(__LS__(30010), "Aktualisierung wird durchgefuehrt", __icon__, enabled=monitor.enableinfo)
+                    ph.notifyOSD(__LS__(30010), __LS__(30108), __icon__, enabled=monitor.enableinfo)
                     xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
             else:
-                ph.notifyOSD(__LS__(30010), "Aktualisierung wird durchgefuehrt", __icon__, enabled=monitor.enableinfo)
+                ph.notifyOSD(__LS__(30010), __LS__(30108), __icon__, enabled=monitor.enableinfo)
                 xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
 
         self.stop()

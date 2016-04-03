@@ -430,3 +430,82 @@ msgctxt "#30182"
 msgid "Zeige Unwetter Warn Symbol"
 msgstr "Zeige Unwetter Warn Symbol"
 
+
+
+
+msgctxt "#30190"
+msgid "Livestream Auswahl"
+msgstr "Livestream Auswahl"
+
+msgctxt "#30191"
+msgid "Tagesschau 24"
+msgstr "Tagesschau 24"
+
+msgctxt "#30192"
+msgid "Euronews"
+msgstr "Euronews"
+
+msgctxt "#30193"
+msgid "ntv"
+msgstr "ntv"
+
+msgctxt "#30194"
+msgid "n24"
+msgstr "n24"
+
+msgctxt "#30195"
+msgid "Phoenix"
+msgstr "Phoenix"
+
+msgctxt "#30196"
+msgid "Deutsche Welle"
+msgstr "Deutsche Welle"
+
+
+msgctxt "#30197"
+msgid "Bundesliga Nächste Spiele"
+msgstr "Bundesliga Nächste Spiele"
+
+msgctxt "#30198"
+msgid "Nächste Spiele in der"
+msgstr "Nächste Spiele in der"
+
+msgctxt "#30199"
+msgid "Bundesliga"
+msgstr "Bundesliga"
+
+msgctxt "#30200"
+msgid "Bundesliga Tabelle"
+msgstr "Bundesliga Tabelle"
+
+msgctxt "#30201"
+msgid "Tabelle der"
+msgstr "Tabelle der"
+
+msgctxt "#30202"
+msgid "Bundesliga Aktueller Spieltag"
+msgstr "Bundesliga Aktueller Spieltag"
+
+msgctxt "#30203"
+msgid "Ergebnisse der"
+msgstr "Ergebnisse der"
+
+
+msgctxt "#30204"
+msgid "Unwetterwarnungen"
+msgstr "Unwetterwarnungen"
+
+msgctxt "#30205"
+msgid "Unwetterwarnungen für"
+msgstr "Unwetterwarnungen für"
+
+msgctxt "#30206"
+msgid "Warnung vor"
+msgstr "Warnung vor"
+
+
+msgctxt "#30207"
+msgid "Wetterkarten"
+msgstr "Wetterkarten"
+
+
