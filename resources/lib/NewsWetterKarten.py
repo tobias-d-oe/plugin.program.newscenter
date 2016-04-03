@@ -388,7 +388,7 @@ class NewsWetterKarten():
     
         if clickable == 1:
             url = self.plz2uwzmap(plz)
-        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=url)
+        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=self.plz2uwzmap(plz))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
     
