@@ -389,9 +389,14 @@ Die Bilddateien aus dem integration Ordner in den Confluence Media Ordner kopier
                 </control>
                 <control type="button" id="561034">
                         <include>ButtonHomeSubCommonValues</include>
+                        <label>Unwetter Karten</label>
+                        <onclick>RunScript(plugin.program.newscenter,"?methode=show_wetter_karte")</onclick>
+                </control>
+                <control type="button" id="561035">
+                        <include>ButtonHomeSubCommonValues</include>
                         <label>Unwetter Warnungen</label>
-                        <visible>!StringCompare(Window(Home).Property(NewsCenter.Unwetter.Anzahl),0)</visible>
                         <onclick>RunScript(plugin.program.newscenter,"?methode=show_unwetter_warnungen")</onclick>
+                        <visible>!StringCompare(Window(Home).Property(NewsCenter.Unwetter.Anzahl),0)</visible>
                 </control>
 
 
