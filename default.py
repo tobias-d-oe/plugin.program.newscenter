@@ -361,6 +361,10 @@ elif methode=='show_wetter_karte':
     DETAILWIN = xbmcgui.WindowXMLDialog('wetterkarten-DialogWindow.xml', __addonDir__, 'Default', '720p')
     DETAILWIN.doModal()
 
+elif methode=='show_wetter_karte_bundesland':
+    DETAILWIN = xbmcgui.WindowXMLDialog('wetterkarten-bundesland-DialogWindow.xml', __addonDir__, 'Default', '720p')
+    DETAILWIN.doModal()
+
 
 
 
