@@ -143,7 +143,7 @@
 
 
                                 </focusedlayout>
-                                <content>plugin://plugin.program.newscenter?methode=get_uwz_maps</content> 
+                                <content>plugin://plugin.program.newscenter?methode=get_uwz_maps&amp;clickable=0</content> 
             <!--  E N D E - NR 1 -->
             
                         </control>
