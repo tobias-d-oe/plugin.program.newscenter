@@ -45,7 +45,6 @@ from resources.lib.NewsUWZ import NewsUWZ
 from resources.lib.NewsBuli import NewsBuli,PluginHelpers
 from resources.lib.NewsFeed import NewsFeed
 
-# To Remove: LatestDokus Widget
 import json
 import urllib2
 
@@ -83,9 +82,6 @@ def show_unwetterwarnungen():
 
 
 
-
-# To Remove: docu.cc Widget
-
 ##########################################################################################################################
 ##
 ##########################################################################################################################
@@ -98,34 +94,6 @@ def getUnicodePage(url):
     else:
         content = unicode(req.read(), "utf-8")
     return content
-
-##########################################################################################################################
-##
-##########################################################################################################################
-def set_LatestDokus_to_Home(url):
-    WINDOW = xbmcgui.Window( 10000 )
-    content = str(getUnicodePage(url))
-    NewDokus = json.loads(content)
-    NewDokus = NewDokus['dokus']
-    x=0
-    for Doku in NewDokus:
-        WINDOW.setProperty( "LatestDocu.%s.Title" % (x), Doku['title'] )
-        WINDOW.setProperty( "LatestDocu.%s.Thumb" % (x), Doku['cover'] )
-        WINDOW.setProperty( "LatestDocu.%s.Path" % (x),  'plugin://plugin.video.youtube/?action=play_video&videoid=%s' % (Doku['youtubeId']) )
-        WINDOW.setProperty( "LatestDocu.%s.Tags" % (x),  Doku['dokuSrc'] )
-        x+=1
-
-##########################################################################################################################
-##
-##########################################################################################################################
-def clear_LatestDokus_at_Home():
-    WINDOW = xbmcgui.Window( 10000 )
-    for i in range(1,25):
-        WINDOW.clearProperty('LatestDocu.%s.Title' % i)
-        WINDOW.clearProperty('LatestDocu.%s.Thumb' % i)
-        WINDOW.clearProperty('LatestDocu.%s.Path' % i)
-        WINDOW.clearProperty('LatestDocu.%s.Tags' % i)
-
 
 
 
@@ -155,9 +123,24 @@ WINDOW                  = xbmcgui.Window( 10000 )
 
 
 
-FeedFile = xbmc.translatePath('special://home/addons/'+__addonID__+'/NewsFeeds.json').decode('utf-8')
-with open(FeedFile, 'r') as feeds:
-    ConfigFeeds=feeds.read().rstrip('\n')
+
+#FeedFile = xbmc.translatePath('special://home/addons/'+__addonID__+'/NewsFeeds.json').decode('utf-8')
+FeedFile = '%s/NewsFeeds.json' % (__addonUserDataFolder__) # xbmc.translatePath('special://home/addons/'+__addonID__+'/NewsFeeds.json').decode('utf-8')
+
+try:
+    with open(FeedFile, 'r') as feeds:
+        ConfigFeeds=feeds.read().rstrip('\n')
+except:
+    TemplateFeedFile = xbmc.translatePath('special://home/addons/'+__addonID__+'/NewsFeeds.json').decode('utf-8')
+    TemplateFeedFileHandle = open(TemplateFeedFile)
+    TemplateFeedFileContent = TemplateFeedFileHandle.read()
+    TemplateFeedFileHandle.close()
+    UserFeedFileHandle = open(FeedFile, 'w')
+    UserFeedFileHandle.write(TemplateFeedFileContent)
+    UserFeedFileHandle.close()
+    with open(FeedFile, 'r') as feeds:
+        ConfigFeeds=feeds.read().rstrip('\n')
+
 
 BuliFile = xbmc.translatePath('special://home/addons/'+__addonID__+'/Buli.json') #.decode('utf-8')
 with open(BuliFile, 'r') as Mannschaften:
@@ -174,8 +157,8 @@ nuwz = NewsUWZ()
 nb   = NewsBuli()
 nf   = NewsFeed()
 
-
-if len(sys.argv)==3:
+ph.writeLog("SYSARGV : %s" % (sys.argv),level=xbmc.LOGDEBUG)
+if len(sys.argv)>=3:
     addon_handle = int(sys.argv[1])
     params = ph.parameters_string_to_dict(sys.argv[2])
     methode = urllib.unquote_plus(params.get('methode', ''))
@@ -193,11 +176,10 @@ elif len(sys.argv)>1:
 else:
     methode = None
     buliliga = 1
+    clickable = ''
 
 if clickable == '':
     clickable = 1
-
-ph.writeLog("Methode in Script: %s" % (methode),level=xbmc.LOGDEBUG )
 
 
 ##########################################################################################################################
@@ -513,13 +495,12 @@ elif methode=='refresh':
             WINDOW.setProperty( "NewsCenter.Ort", __addon__.getSetting('storeort') )
         else:
             xbmc.executebuiltin('XBMC.Notification('+notifyheader+', '+str(__LS__(30149))+' ,4000,'+__icon__+')')
-        # To Remove: LatestDokus Widget
-        set_LatestDokus_to_Home('http://doku.cc/api.php?get=new-dokus&page=1')
 
 
 
 
 elif methode==None:
+
     allfeeds = json.loads(str(ConfigFeeds))
     feedname=[]
     for f in allfeeds:

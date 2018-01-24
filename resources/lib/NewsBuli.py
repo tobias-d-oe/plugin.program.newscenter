@@ -14,6 +14,9 @@ import sys
 import os
 
 class PluginHelpers():
+    """
+    PluginHelpers Class offers plugin developers a wide range of easy to use functions
+    """
     def __init__(self):
         url=''
 
@@ -21,6 +24,12 @@ class PluginHelpers():
 ##
 ##########################################################################################################################
     def getUnicodePage(self,url):
+        """
+        retrieve a url webpage utf-8 encoded
+
+        :param url: set the url to retrive
+        :return: webpage content utf-8 encoded 
+        """
         req = urllib2.urlopen(url)
         content = ""
         if "content-type" in req.headers and "charset=" in req.headers['content-type']:

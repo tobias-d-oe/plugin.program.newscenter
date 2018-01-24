@@ -27,7 +27,6 @@ class NewsCenterGeoHelper():
         with open(BundFile, 'r') as PLZTrans:
             content=PLZTrans.read().rstrip('\n').decode('utf-8')
         PLZJson = json.loads(content)
-        #debug('plz2bundesland')
     
         for i in PLZJson:
             if (plz >= i['start']) and (plz <= i['ende']):
@@ -38,8 +37,7 @@ class NewsCenterGeoHelper():
         url = "http://www1.dasoertliche.de/Controller?zvo_ok=&book=&plz=&quarter=&district=&ciid=&pc=%s&image=Finden&buc=&kgs=&searchType=plz&buab=&zbuab=&page=210&context=5&action=43&form_name=search_pc" % (plz)
         req = urllib2.urlopen(url)
         content = req.read()
-        ort = re.compile('<input type="hidden" name="ci" value="(.+?)"/>', re.DOTALL).findall(content)[0]
-        ort = unicode(ort, "ISO-8859-15")
+        ort = re.compile('<input type="hidden" name="ci" value="(.+?)"/>', re.DOTALL).findall(content)[1]
         return ort
     
     
@@ -80,7 +78,6 @@ class NewsWetterKarten():
     def plz2uwzmap(self,plz):
         gh = NewsCenterGeoHelper()
         Bundesland = gh.plz2bundesland(plz).encode('utf-8')
-        #debug("Bundesland=%s" % (Bundesland) )
         if Bundesland == "Bayern":
             pic="http://www.unwetterzentrale.de/images/map/bayern_index.png"
         elif "Baden-W" in Bundesland:
@@ -222,6 +219,9 @@ class NewsWetterKarten():
     
         if clickable == 1:
             url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand)
+        else:
+            url = 'http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand)
+
         li = xbmcgui.ListItem('%s aktuell' % (Bundesland), iconImage='http://www.dwd.de/DWD/wetter/aktuell/deutschland/bilder/wx_%s_akt.jpg%s' % (bl,rand))
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
@@ -388,7 +388,7 @@ class NewsWetterKarten():
     
         if clickable == 1:
             url = self.plz2uwzmap(plz)
-        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=self.plz2uwzmap(plz))
+        li = xbmcgui.ListItem("Unwetterkarte von %s" % (Bundesland), iconImage=url)
         xbmcplugin.addDirectoryItem(int(sys.argv[1]), url=url, listitem=li)
     
     

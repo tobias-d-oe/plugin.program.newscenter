@@ -1,4 +1,4 @@
-<!-- plugin.program.newscenter - Bulilist Platzierung - START -->
+<!-- plugin.program.newscenter - Bulilist - START -->
 <!-- Confluence Skin adapted -->
 <window>
         <defaultcontrol always="true">10</defaultcontrol>
@@ -34,6 +34,7 @@
                                 <height>30</height>
                                 <font>font13_title</font>
                                 <label>$ADDON[plugin.program.newscenter  30200]</label>  
+                       <!--         <label>$ADDON[plugin.program.tvhighlights  30100]</label>  -->
                                 <align>center</align>
                                 <aligny>center</aligny>
                                 <textcolor>selected</textcolor>

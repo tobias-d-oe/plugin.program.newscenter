@@ -41,10 +41,9 @@
         "pic": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Logo_Sport1_2013.svg/270px-Logo_Sport1_2013.svg.png"
 
 }, {
-        "name": "LAOLA1",
+        "name": "LAOLA1.at",
         "url": "http://www.laola1.at/templates/generated/1/xml/rss/newsRSS.xml",
         "pic": "http://lhockey.com/wp-content/logos/laola1tv.png"
-
 }, {    
         "name": "Golem",
         "url": "http://golem.de.dynamic.feedsportal.com/pf/578068/http://rss.golem.de/rss.php?feed=RSS2.0",
@@ -70,5 +69,11 @@
         "url": "http://wetterkanal.kachelmannwetter.com/feed/",
         "pic": "http://wetterkanal.kachelmannwetter.com/wp-content/uploads/2015/11/Logo_v2-150px1-e1447078300181.png"
 
+}, {
+        "name": "Presseportal.de",
+        "url": "http://www.presseportal.de/rss/presseportal.rss2",
+        "pic": "http://www.presseportal.de/assets/img/pp-header-logo-de.png"
+
 }
+
 ]

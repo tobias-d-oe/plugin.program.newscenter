@@ -84,12 +84,16 @@ class NewsVideos():
 ##
 ##########################################################################################################################
     def get_wetteronline_url(self):
-        headers = { 'User-Agent' : 'Mozilla/5.0' }
-        req = urllib2.Request('http://www.wetteronline.de/wetter-videos', None, headers)
+        url = "https://www.wetteronline.de/wetterticker"
+        req = urllib2.Request(url, headers={ 'User-Agent': 'Mozilla/5.0' })
         html = urllib2.urlopen(req).read()
-        wetterfile = re.findall('20\d\d\d\d\d\d_...mp4',html)
-        url = "rtmp://62.113.210.2/wetteronline-vod/"+wetterfile[0]
-        return url
+        streams = re.compile('<source type="application/x-mpegurl" src="(.+?)">', re.DOTALL).findall(html)
+        wetter60stream=""
+        for stream in streams:
+          if re.search("20......_dl_20" , stream):
+            wetter60stream=stream
+
+        return wetter60stream
     
 
 ##########################################################################################################################

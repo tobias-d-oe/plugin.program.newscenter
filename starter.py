@@ -173,6 +173,8 @@ class Starter():
         monitor.settings_initialize()
 
         ph.notifyOSD(__LS__(30010), __LS__(30106), __icon__, enabled=monitor.enableinfo)
+
+        xbmc.executebuiltin('XBMC.RunScript(plugin.program.newscenter,"?methode=refresh")')
         
         while not monitor.abortRequested():
             if ( monitor.waitForAbort(monitor.refreshcontent) | monitor.refreshcontent == 0 ):
